@@ -9,20 +9,43 @@ var enemyName = "Roborto";
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-var fight = function() {
-  window.alert("Welcome to Robot Gladiators!");
+var fight = function () {
+    window.alert("Welcome to Robot Gladiators!");
 
-  //enemy's health decreases as player attacks 
-  enemyHealth = enemyHealth - playerAttack;
+    //enemy's health decreases as player attacks 
+    enemyHealth = enemyHealth - playerAttack;
 
-  //logs in the enemy health result
-  console.log(`Current enemy health is at: ${enemyHealth} points`);
+    //logs in the enemy health result
+    console.log(`Current enemy health is at: ${enemyHealth} points`);
 
-  //player's health decreases as enemy attacks 
-  playerHealth = playerHealth - enemyAttack;
+    //player's health decreases as enemy attacks 
+    playerHealth = playerHealth - enemyAttack;
 
-   //logs in the enemy health result
-   console.log(`Current pla health is at: ${enemyHealth} points`);
+    //logs in the enemy health result
+    console.log(`Current enemy's health is at: ${enemyHealth} points`);
+
+    console.log(
+        playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
+    );
+
+    // check enemy's health
+    if (enemyHealth <= 0) {
+        window.alert(enemyName + " has died!");
+    }
+    else {
+        window.alert(enemyName + " still has " + enemyHealth + " health left.");
+    }
+
+    // put new code under this
+    console.log(enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining.");
+
+    // check player's health
+    if (playerHealth <= 0) {
+        window.alert(playerName + " has died!");
+    }
+    else {
+        window.alert(playerName + " still has " + playerHealth + " health left.");
+    }
 };
 
 fight();
